@@ -1,0 +1,59 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: provide_name
+  examples: |
+    - My name is [John](name)
+    - I am [prakash](name)
+    - It's [praveen](name)
+    - [mukesh](name)
+    - [nishanth](name)
+    - [karthick](name)
+    - I am [ram](name)
+    - My name is [prakash](name)
+
+
+- intent: provide_email
+  examples: |
+    - My email is [johnd18@gmail.com](email)
+    - You can contact me at [jane.doe@example.com](email)
+    - It's [avinash@example.com](email)
+    - email is [john.doe@gmail.com](email)
+    - email address is [john.doe@gmail.com](email)
+
+- intent: get_offers
+  examples: |
+    - i want see available offers
+    - can you show me the offers
+    - What offers do you have
+    - Are there any current offers
+    - Show me the offers

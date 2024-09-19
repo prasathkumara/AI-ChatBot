@@ -1,0 +1,33 @@
+version: "3.1"
+
+stories:
+
+- story: Greet and ask for name
+  steps:
+  - intent: greet
+  - action: action_greet_user
+
+- story: User provides name and ask for email
+  steps:
+  - intent: provide_name
+    entities:
+      - name: "John"
+  - slot_was_set:
+    - name: "John"
+  - action: utter_ask_email
+
+- story: User provides email and request offers
+  steps:
+  - intent: provide_email
+    entities:
+      - email: "john.doe@example.com"
+  - slot_was_set:
+    - email: "john.doe@example.com"
+  - action: action_show_slot_values
+
+- story: User requests offers after providing email
+  steps:
+  - intent: get_offers
+  - action: action_get_offers
+
+

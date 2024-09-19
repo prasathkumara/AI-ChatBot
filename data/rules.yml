@@ -1,0 +1,32 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Greet and ask for name
+  steps:
+  - intent: greet
+  - action: action_greet_user
+
+- rule: Ask for email after name is provided
+  steps:
+  - intent: provide_name
+  - slot_was_set:
+    - name: "John"
+  - action: utter_ask_email
+
+- rule: Provide email after name is provided
+  steps:
+  - intent: provide_email
+  - slot_was_set:
+    - email: "john.doe@example.com"
+  - action: action_show_slot_values
+
+- rule: Provide offers after email is provided
+  steps: 
+  - intent: get_offers
+  - action: action_get_offers
+

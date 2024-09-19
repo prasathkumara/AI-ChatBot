@@ -1,0 +1,52 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - get_offers
+  - provide_name
+  - provide_email
+
+entities:
+  - name
+  - email
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  email:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email
+
+responses:
+  utter_greet:
+  - text: "Hello! What's your name?"
+
+  utter_greet_known:
+  - text: "Hello again, {name}! How can I assist you today?"
+
+  utter_ask_email:
+    - text: "Nice to meet you, {name}. Can you please provide your email?"
+
+  utter_ask_offers:
+    - text: "thank you for providing your email address {email} "
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_show_offers:
+  - text: "Here are the current offers: {offers}"
+
+actions:
+  - action_get_offers
+  - action_show_slot_values
+  - action_greet_user
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
